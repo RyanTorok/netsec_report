@@ -60,8 +60,57 @@ catastrophic effects.
 In this section we will walk through the process of exploiting the bug, all the way up to arbitrary
 code execution. In our instance, we choose to spawn a shell.
 
-\subsection{Reading an Array Out of Bounds}
+\subsection{Triggering the Bug}
 
-\section{Patch and Resolution} 
+\begin{figure}
+	\centering
+	\includegraphics[width=300pt]{example1.png}
+	\caption{Code which determines whether Math.expm1() returns 0 or -0}
+  \label{fig:example1}
+\end{figure}
+
+The goal of the first stage of our exploit is to utilize the buggy fine-grained return type of
+\texttt{Math.expm1()} to eliminate a bounds check which is in fact not safe, and allow us to access
+memory outside the bounds of the array. The first step involves creating a variable which depends on
+the result of our buggy function call. In other words, we need a way to distinguish between the
+values 0 and -0. The only function useful to us in this case is \texttt{Object.is()}. In the code
+segment shown in Figure \ref{fig:example1}, the variable \texttt{isNegativeZero} will be 1 if
+\texttt{Math.expm1()} returns -0, and 0 otherwise. Running this line of code before it becomes 'hot'
+and JIT optimzed will always store 1 into \texttt{isNegativeZero}, because the code is interpreted
+directly and the native backing function for \texttt{Math.expm1()} returns -0. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=300pt]{example2.png}
+	\caption{The first call to hax() correctly prints 'true', but the second prints 'false' because the buggy JIT optimization folds the entire Object.is call to 'false'.}
+  \label{fig:example2}
+\end{figure}
+
+This becomes interesting when we run the code after it has been JIT-optimized. Consider the code in
+Figure \ref{fig:example2}. This code calls the function \texttt{hax} once without optimization, and
+once with optimization. The \texttt{\%OptimizeFucntionOnNextCall} annotation is a macro which
+can be invoked using the \texttt{--allow-natives-syntax} flag on the command line. These annotations
+are only used for debugging, and in a real exploit this macro would be replaced with calling the
+function a set number of times in a loop to achieve the level of optimization we want. Running this code prints \texttt{true} for the first call and \texttt{false}
+for the second. Why? The first time the code runs, it is interpreted directly, and the engine
+correctly evaluates -0 equal to -0. Before the second call, the JIT (incorrectly) optimizes the
+function to native code, and in its analysis it incorrectly assumes \texttt{Math.expm1()} can never
+return -0, since its return type is (erroneously) listed as a union of \texttt{PlainNumber} and
+\texttt{NaN}. Therefore TurboFan assumes the \texttt{Object.is} call always evaluates to
+\texttt{false}, and uses \textit{Folding} to reduce the variable \texttt{isNegativeZero} to the
+constant \texttt{false}, thus breaking the semantics of the \texttt{Math.expm1()} function.
+
+\subsection{Triggering an Out-of-Bounds Array Access}
+\begin{figure}
+	\centering
+	\includegraphics[width=300pt]{example3.png}
+	\caption{First attempt at an out of bounds array access. This fails because the Object.is
+	call folds to false, which prevents the out of bounds index.}
+  \label{fig:example3}
+\end{figure}
+Now that we've triggered the bug, how can we turn it into a memory leak? The idea is to exploit the
+bug to cause the JIT to remove an array bounds check in the optimized code, allowing us to read out
+of bounds. Consider the code in Figure \ref{fig:example3} 
+\section{Patch and Resolution}
 \end{document}
 
