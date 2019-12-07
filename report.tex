@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                
+\geometry{letterpaper}
+\usepackage[]{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+
+\title{Math.expm1(-0) in v8 TurboFan JIT Compiler}
+\author{Ryan Torok, Sara McFearin, Michael Jarrett, Rachel Shi}
+\date{December 7, 2019}
+\begin{document}
+\maketitle
+\section{Introduction}
+Browser bugs are difficult to find, but they appear to be prevalent across all four major browser
+engines. In recent years most of the focus has been on bugs in the JavaScript Just-in-Time (JIT)
+compilers. Improper optimization can often lead to a memory corruption exploit which allows the
+attacker to take control of the victim's browser and begin executing aribtrary code on the victim's
+machine, making browser bugs a popular target for cybercriminals who run botnets, ransomware scams,
+and more. Although it is not uncommon for compilers to contain bugs in their large codebases,
+browser JIT compilers are unique in the sense that they must deal with adversarially chosen code. In
+a normal pre-compilation setting, if a compiler bug is found, programmers simply won't write code
+that triggers the bug for sake of security. However, in browsers, the compiler runs on the user's
+machine, and if a browser JIT compiler bug is found, attackers will intentionally ship code which
+triggers the bug in order to take over the user's machine. 
+
+With this in mind, it seems like we will be playing an infinite game of Whack-a-mole with browser
+JavaScript engines, but new techniques have risen in recent years to make bug elimination faster,
+most notably Fuzzing. Fuzzing is a technique which originated in image encoding protocols, where a
+penetration tester will pass random binary inputs to the protocol attempting to cause a crash. With
+some modifications based on knowledge of how browser JITs create a graph of a code segment,
+penetration testers can write automated tools which generate random JavaScript code inputs which
+look somewhat interesting. The most popular of these tools is called \textit{Fuzzily}, which has
+already found a plethora of bugs in the JavaScript engines for all four major web browsers.
+
+\section{The Bug}
+We will focus now on one of these bugs in particular. The TurboFan JIT compiler used by v8, the
+JavaScript engine for the Chrome and Chromium web browsers, was exploited in 2018 using an edge
+case with the function \texttt{Math.expm1()}, which computes $e^x -1$ for argument $x$.
+Specifically, if we evaluate \texttt{Math.expm1(-0)}, this should produce the value -0. However, the
+TurboFan JIT lists the return type for this function as a union of the \texttt{PlainNumber} 
+\section{Exploitation Techniques}
+\section{Patch and Resolution}
+\end{document}
+
