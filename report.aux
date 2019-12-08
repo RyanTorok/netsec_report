@@ -10,7 +10,36 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Triggering the Bug}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The first call to hax() correctly prints 'true', but the second prints 'false' because the buggy JIT optimization folds the entire Object.is call to 'false'.}}{3}}
 \newlabel{fig:example2}{{3}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces First attempt at an out of bounds array access. This fails because the Object.is call folds to false, which prevents the out of bounds index.}}{3}}
-\newlabel{fig:example3}{{4}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Triggering an Out-of-Bounds Array Access}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Patch and Resolution}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Triggering an Out-of-Bounds Array Access}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces First attempt at an out of bounds array access. This fails because the Object.is call folds to false, which prevents the out of bounds index.}}{4}}
+\newlabel{fig:example3}{{4}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Second attempt at an out of bounds array access. The Object.is call is no longer folded, but the variable \texttt  {y} could be out of the Object.is call folds to false, but this still fails because the bounds check is not removed.}}{4}}
+\newlabel{fig:example5}{{5}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example of escape analysis.}}{5}}
+\newlabel{fig:example4}{{6}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Successful out of bounds memory access, using escape analsyis manipulation. The Object.is call is no longer folded, and the bounds check is eliminated.}}{5}}
+\newlabel{fig:example6}{{7}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Folding Prevention}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Escape Analysis Manipulation}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Successful out of bounds memory access, using escape analsyis manipulation. The Object.is call is no longer folded, and the bounds check is eliminated.}}{6}}
+\newlabel{fig:oob}{{8}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Obtaining Stable Out-of-Bounds Read and Write}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Successful out of bounds memory access, using escape analsyis manipulation. The Object.is call is no longer folded, and the bounds check is eliminated.}}{7}}
+\newlabel{fig:addrof}{{9}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Developing Exploitation Primitives}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Implementing \texttt  {addrof()}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Successful out of bounds memory access, using escape analsyis manipulation. The Object.is call is no longer folded, and the bounds check is eliminated.}}{8}}
+\newlabel{fig:readmem}{{10}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Implementing \texttt  {read()} and \texttt  {write()}}{8}}
+\bibcite{Grob}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The patched return type definition of \texttt  {Math.expm1} in operation-typer.cc.}}{9}}
+\newlabel{fig:patch}{{11}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Executing a Shell}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Patch and Resolution}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Acknowledgements}{9}}
+\bibcite{Biondo}{2}
+\bibcite{Bosamiya}{3}
+\bibcite{Issue}{4}
+\bibcite{Klees}{5}
+\bibcite{Saelo1}{6}
+\bibcite{Saelo2}{7}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.14)  7 DEC 2019 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.14)  7 DEC 2019 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -336,31 +336,87 @@ Package pdftex.def Info: example2.png  used on input line 84.
 <example3.png, id=24, 450.68375pt x 201.75375pt>
 File: example3.png Graphic file (type png)
 <use example3.png>
-Package pdftex.def Info: example3.png  used on input line 106.
+Package pdftex.def Info: example3.png  used on input line 111.
 (pdftex.def)             Requested size: 300.0pt x 134.30617pt.
- [3 <./example2.png> <./example3.png>] [4] (./report.aux) ) 
+<example5.png, id=25, 485.815pt x 239.89626pt>
+File: example5.png Graphic file (type png)
+<use example5.png>
+Package pdftex.def Info: example5.png  used on input line 128.
+(pdftex.def)             Requested size: 300.0pt x 148.13747pt.
+ [3 <./example2.png>] [4 <./example3.png> <./example5.png>]
+<example4.png, id=35, 641.39626pt x 119.44624pt>
+File: example4.png Graphic file (type png)
+<use example4.png>
+Package pdftex.def Info: example4.png  used on input line 146.
+(pdftex.def)             Requested size: 400.0pt x 74.49332pt.
+<example6.png, id=36, 584.1825pt x 229.85875pt>
+File: example6.png Graphic file (type png)
+<use example6.png>
+Package pdftex.def Info: example6.png  used on input line 162.
+(pdftex.def)             Requested size: 300.0pt x 118.04361pt.
+ [5 <./example4.png> <./example6.png>]
+<oob.jpg, id=43, 963.6pt x 542.025pt>
+File: oob.jpg Graphic file (type jpg)
+<use oob.jpg>
+Package pdftex.def Info: oob.jpg  used on input line 182.
+(pdftex.def)             Requested size: 430.00462pt x 241.87442pt.
+ [6 <./oob.jpg>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 206.
+<addrof.jpg, id=47, 963.6pt x 542.025pt>
+File: addrof.jpg Graphic file (type jpg)
+<use addrof.jpg>
+Package pdftex.def Info: addrof.jpg  used on input line 209.
+(pdftex.def)             Requested size: 430.00462pt x 241.87442pt.
+ [7 <./addrof.jpg>]
+<readmem.jpg, id=52, 963.6pt x 542.025pt>
+File: readmem.jpg Graphic file (type jpg)
+<use readmem.jpg>
+Package pdftex.def Info: readmem.jpg  used on input line 235.
+(pdftex.def)             Requested size: 430.00462pt x 241.87442pt.
+ [8 <./readmem.jpg>]
+<patch.png, id=56, 604.2575pt x 128.48pt>
+File: patch.png Graphic file (type png)
+<use patch.png>
+Package pdftex.def Info: patch.png  used on input line 261.
+(pdftex.def)             Requested size: 300.0pt x 63.78697pt.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+ [9 <./patch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+[]\OT1/cmr/m/n/10.95 Saelo. (2016, Oc-to-ber 27). At-tack-ing JavaScript En-gin
+es: A
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmr/m/n/10.95 case study of JavaScript-Core and CVE-2016-4622. Re-trieved 
+from
+ []
+
+[10] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 3544 strings out of 494923
- 47124 string characters out of 6180742
- 118422 words of memory out of 5000000
- 6794 multiletter control sequences out of 15000+600000
- 11558 words of font info for 44 fonts, out of 8000000 for 9000
+ 3598 strings out of 494923
+ 47828 string characters out of 6180742
+ 119462 words of memory out of 5000000
+ 6839 multiletter control sequences out of 15000+600000
+ 11866 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,6n,43p,273b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
->
-Output written on report.pdf (4 pages, 182228 bytes).
+ 41i,6n,43p,570b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on report.pdf (10 pages, 458929 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
